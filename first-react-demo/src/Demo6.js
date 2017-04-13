@@ -10,8 +10,9 @@ class Demo6 extends Component {
   }
 handleClick(){
   this.setState({
-    enable:!this.state.enbale
+    enable:!this.state.enable
   });
+
   event.stopPropagation();
   event.preventDefault();
 }
@@ -20,6 +21,7 @@ handleClick(){
     return (
       <p>
         <input type="text" disabled={this.state.enable}/>
+        <span>{this.state.enable}</span>
         <button onClick={this.handleClick}>点我啊</button>
       </p>
     )

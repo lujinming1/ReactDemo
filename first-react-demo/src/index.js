@@ -70,7 +70,7 @@ var Demo7 = React.createClass({
     return {enable:false};
   },
   handleClick: function(event){
-    this.setState({enable:!this.state.enbale});
+    this.setState({enable:!this.state.enable});
     event.stopPropagation();
     event.preventDefault();
   },
