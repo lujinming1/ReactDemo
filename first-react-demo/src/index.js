@@ -4,6 +4,10 @@ import App from './App';
 import './index.css';
 import Demo5 from './Demo5';
 import Demo6 from './Demo6';
+import Demo8 from './Demo8';
+import Demo9 from './Demo9';
+import Demo10 from './Demo10';
+
 
 ReactDOM.render(
   <App />,
@@ -54,9 +58,9 @@ ReactDOM.render(
 );
 
 
-
+var data = 123;
 ReactDOM.render(
-  <Demo5 name='Demo5'/>,
+  <Demo5 name='Demo5' title={data}/>,
   document.getElementById('demo5')
 );
 
@@ -70,7 +74,7 @@ var Demo7 = React.createClass({
     return {enable:false};
   },
   handleClick: function(event){
-    this.setState({enable:!this.state.enbale});
+    this.setState({enable:!this.state.enable});
     event.stopPropagation();
     event.preventDefault();
   },
@@ -87,4 +91,23 @@ var Demo7 = React.createClass({
 ReactDOM.render(
   <Demo7 />,
   document.getElementById('demo7')
+);
+
+ReactDOM.render(
+  <Demo8>
+    <span>hello</span>
+    <span>demo8</span>
+  </Demo8>,
+  document.getElementById('demo8')
+);
+
+ReactDOM.render(
+  <Demo9 />,
+  document.getElementById('demo9')
+);
+
+
+ReactDOM.render(
+  <Demo10 />,
+  document.getElementById('demo10')
 );
