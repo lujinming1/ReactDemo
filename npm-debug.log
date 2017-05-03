@@ -1,14 +1,15 @@
 0 info it worked if it ends with ok
 1 verbose cli [ '/home/lu/.nvm/versions/node/v6.2.0/bin/node',
 1 verbose cli   '/home/lu/.nvm/versions/node/v6.2.0/bin/npm',
-1 verbose cli   'start' ]
+1 verbose cli   'run',
+1 verbose cli   'build' ]
 2 info using npm@3.8.9
 3 info using node@v6.2.0
 4 verbose stack Error: ENOENT: no such file or directory, open '/home/lu/Desktop/dev/ReactDemo/package.json'
 4 verbose stack     at Error (native)
 5 verbose cwd /home/lu/Desktop/dev/ReactDemo
 6 error Linux 3.19.0-25-generic
-7 error argv "/home/lu/.nvm/versions/node/v6.2.0/bin/node" "/home/lu/.nvm/versions/node/v6.2.0/bin/npm" "start"
+7 error argv "/home/lu/.nvm/versions/node/v6.2.0/bin/node" "/home/lu/.nvm/versions/node/v6.2.0/bin/npm" "run" "build"
 8 error node v6.2.0
 9 error npm  v3.8.9
 10 error path /home/lu/Desktop/dev/ReactDemo/package.json

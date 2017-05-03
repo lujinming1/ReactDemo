@@ -111,3 +111,46 @@ ReactDOM.render(
   <Demo10 />,
   document.getElementById('demo10')
 );
+
+
+
+function template(strings, ...keys) {
+  return (function(...values) {
+    var dict = values[values.length - 1] || {};
+    var result = [strings[0]];
+    keys.forEach(function(key, i) {
+      var value = Number.isInteger(key) ? values[key] : dict[key];
+      result.push(value, strings[i + 1]);
+    });
+    return result.join('');
+  });
+}
+
+var t1Closure = template`${0}${1}${0}!`;
+t1Closure('Y', 'A');  // "YAY!"
+var t2Closure = template`${0} ${'foo'}!`;
+t2Closure('Hello', {foo: 'World'});  // "Hello World!"
+
+var a = 5;
+var b = 10;
+
+function tag(strings, ...values) {
+  console.log(strings[0]); // "Hello "
+  console.log(strings[1]); // " world "
+  console.log(strings[2]); // ""
+  console.log(values[0]);  // 15
+  console.log(values[1]);  // 50
+
+  return "Bazinga!";
+}
+
+tag`Hello ${ a + b } world ${ a * b}`;
+// "Bazinga!"
+
+ReactDOM.render(
+  <div>
+    <span>{t1Closure('Y', 'A')}</span><br/>
+    <span>{t2Closure('Hello', {foo: 'World'})}</span><br/>
+    <span>{tag`Hello ${ a + b } world ${ a * b}`}</span>
+  </div>,document.getElementById('demo11')
+);
