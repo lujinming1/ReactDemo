@@ -7,7 +7,7 @@ import Demo6 from './Demo6';
 import Demo8 from './Demo8';
 import Demo9 from './Demo9';
 import Demo10 from './Demo10';
-
+import Demo12 from './Demo12';
 
 ReactDOM.render(
   <App />,
@@ -153,4 +153,13 @@ ReactDOM.render(
     <span>{t2Closure('Hello', {foo: 'World'})}</span><br/>
     <span>{tag`Hello ${ a + b } world ${ a * b}`}</span>
   </div>,document.getElementById('demo11')
+);
+
+
+
+
+
+ReactDOM.render(
+  <Demo12 />,
+  document.getElementById('demo12')
 );
